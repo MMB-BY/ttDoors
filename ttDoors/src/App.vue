@@ -1,9 +1,9 @@
 <script setup>
-import Scene from './components/Scene.vue'
+import SceneComponent from './components/SceneComponent.vue'
 </script>
 
 <template>
   <main>
-    <Scene />
+    <SceneComponent />
   </main>
 </template>
