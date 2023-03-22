@@ -79,7 +79,7 @@ const useScene = () => {
         controls.addEventListener('start', turnOffControlsAutoRotate);
 
         //plane
-        const planeTexture = new TextureLoader().load(planeTextureImg);
+        const planeTexture = new TextureLoader().setCrossOrigin("anonymous").load(planeTextureImg);
         planeTexture.wrapS = RepeatWrapping;
         planeTexture.wrapT = RepeatWrapping;
         planeTexture.repeat.set( 1, 1 );
@@ -101,11 +101,11 @@ const useScene = () => {
         const addFirstDoor = () => {
             const doorGeometry = new BoxGeometry(10, 24, 0.2);
     
-            const frontDoorTexure = new TextureLoader().load(doorTextureImg);
+            const frontDoorTexure = new TextureLoader().setCrossOrigin("anonymous").load(doorTextureImg);
             frontDoorTexure.wrapS = RepeatWrapping;
             frontDoorTexure.repeat.set( 1, 1 );
     
-            const backDoorTexure = new TextureLoader().load(doorTextureImg);
+            const backDoorTexure = new TextureLoader().setCrossOrigin("anonymous").load(doorTextureImg);
             backDoorTexure.wrapS = RepeatWrapping;
             backDoorTexure.repeat.set( -1, 1 );
     
@@ -127,11 +127,11 @@ const useScene = () => {
         const addSecondDoor = () => {
             const doorGeometry = new BoxGeometry(10, 24, 0.2);
     
-            const frontDoorTexure = new TextureLoader().load(doorTextureImg);
+            const frontDoorTexure = new TextureLoader().setCrossOrigin("anonymous").load(doorTextureImg);
             frontDoorTexure.wrapS = RepeatWrapping;
             frontDoorTexure.repeat.set( 1, 1 );
     
-            const backDoorTexure = new TextureLoader().load(doorTextureImg);
+            const backDoorTexure = new TextureLoader().setCrossOrigin("anonymous").load(doorTextureImg);
             backDoorTexure.wrapS = RepeatWrapping;
             backDoorTexure.repeat.set( -1, 1 );
     
