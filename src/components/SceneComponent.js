@@ -17,8 +17,9 @@ import {
     WebGLRenderer,
 } from "three";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import planeTextureImg from '../assets/planeTexture.jpg';
+import planeTextureImg from '../assets/planeTexture.png';
 import doorTextureImg from '../assets/door.jpeg';
+import planeMap from '../assets/planeMap.png';
 
 import { onMounted, computed, ref } from 'vue';
 
@@ -80,20 +81,23 @@ const useScene = () => {
 
         //plane
         const planeTexture = new TextureLoader().setCrossOrigin("anonymous").load(planeTextureImg);
+        const planeHeightTexture = new TextureLoader().setCrossOrigin("anonymous").load(planeMap);
         planeTexture.wrapS = RepeatWrapping;
         planeTexture.wrapT = RepeatWrapping;
         planeTexture.repeat.set( 1, 1 );
 
         const plane = new Mesh(
-            new PlaneGeometry(40, 40),
+            new PlaneGeometry(40, 40, 1000, 1000),
             new MeshPhysicalMaterial({
                 map: planeTexture,
                 side: DoubleSide,
-                reflectivity: 0
+                reflectivity: 0,
+                displacementMap: planeHeightTexture,
+                displacementScale: 0.8
             }),
         )
-        plane.position.y = -0.1;
-        plane.rotation.x = -Math.PI * 0.49;
+        plane.position.y = -0.7;
+        plane.rotation.x = -Math.PI * 0.5;
         plane.receiveShadow = true;
         scene.add(plane);
 
