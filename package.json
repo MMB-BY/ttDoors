@@ -2,6 +2,7 @@
   "name": "ttdoors",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://mmb-by.github.io/ttDoors/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
